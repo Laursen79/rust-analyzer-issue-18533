@@ -1,14 +1,16 @@
+use std::env;
+use std::env::args_os;
 use std::error::Error;
 
 #[tokio::main]
-async fn main() -> Box<dyn Error> {
+async fn main() -> Result<(), Box<dyn Error>> {
     let pool = sqlx::sqlite::SqlitePool::connect("sqlite:client.db").await?;
     sqlx::query!(
         r#"
-            SELECT thing FROM Client
-            WHERE id = 21
-            "#
-    )
-    .execute(&pool)
-    .await?
+        INSERT INTO client (thing)
+        VALUES (31)
+        "#
+    ).execute(&pool)
+    .await?;
+    Ok(())
 }
