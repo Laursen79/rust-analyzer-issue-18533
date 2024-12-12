@@ -1,0 +1,4 @@
+CREATE TABLE Server (
+  user  INTEGER PRIMARY KEY,
+  other INTEGER
+);
