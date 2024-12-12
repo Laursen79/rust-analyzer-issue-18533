@@ -1,5 +1,5 @@
 -- Add migration script here
-CREATE TABLE Server (
+CREATE TABLE server (
   user  INTEGER PRIMARY KEY,
   other TEXT
 );

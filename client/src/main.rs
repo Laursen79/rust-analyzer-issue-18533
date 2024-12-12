@@ -1,5 +1,3 @@
-use std::env;
-use std::env::args_os;
 use std::error::Error;
 
 #[tokio::main]
@@ -10,7 +8,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         INSERT INTO client (thing)
         VALUES (31)
         "#
-    ).execute(&pool)
+    )
+    .execute(&pool)
     .await?;
     Ok(())
 }

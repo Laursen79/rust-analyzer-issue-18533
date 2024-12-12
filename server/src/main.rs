@@ -8,7 +8,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         INSERT INTO server (other)
         VALUES (31)
         "#
-    ).execute(&pool)
-        .await?;
+    )
+    .execute(&pool)
+    .await?;
     Ok(())
 }
