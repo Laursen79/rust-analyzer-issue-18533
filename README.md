@@ -48,3 +48,13 @@ sqlx::query!(
     )
 ```
 saying that the table server does not exist BECAUSE IT IS EVALUATING AGAINST THE CLIENT DB??
+
+## SQLX Help
+If you need to do anything with SQLX, you need to install SQLX:
+```bash
+cargo install sqlx
+```
+If you need to reset the DBs, write the following command.
+```bash
+sqlx db reset --database_url=sqlite://client/client.db
+```
